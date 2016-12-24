@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--SignIn-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="SignIn" id="BYZ-38-t0r" customClass="ViewController" customModule="Realtime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uS-rJ-U64" customClass="GIDSignInButton">
+                                <rect key="frame" x="225" y="270" width="151" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KOO-Hn-i4t"/>
+                                    <constraint firstAttribute="width" constant="151" id="W2X-F8-WAg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4uS-rJ-U64" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHP-7E-8cb"/>
+                            <constraint firstItem="4uS-rJ-U64" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bAP-nr-Y6S"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nam-EJ-QgI"/>
+                    <connections>
+                        <segue destination="eoP-ca-viv" kind="presentation" identifier="MapViewSegue" id="t9v-ch-pVK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="523" y="60"/>
+        </scene>
+        <!--Map Kit View Controller-->
+        <scene sceneID="t71-eo-8Ol">
+            <objects>
+                <viewController storyboardIdentifier="mapView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eoP-ca-viv" customClass="MapKitViewController" customModule="Realtime" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r9s-Df-jI4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iqh-6d-wwC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QoM-if-kf5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zid-PF-5KD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zid-PF-5KD" firstAttribute="leading" secondItem="QoM-if-kf5" secondAttribute="leading" id="9nw-b2-P2U"/>
+                            <constraint firstItem="Zid-PF-5KD" firstAttribute="top" secondItem="QoM-if-kf5" secondAttribute="top" id="MIJ-Fo-dL4"/>
+                            <constraint firstItem="Zid-PF-5KD" firstAttribute="bottom" secondItem="Iqh-6d-wwC" secondAttribute="top" id="n2Z-2a-n70"/>
+                            <constraint firstAttribute="trailing" secondItem="Zid-PF-5KD" secondAttribute="trailing" id="poC-v9-aMI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Zid-PF-5KD" id="cOC-la-wnt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6w-bD-BU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="40"/>
+        </scene>
+    </scenes>
+</document>
